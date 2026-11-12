@@ -1,0 +1,20 @@
+<resources>
+    <style name="Theme.Allora" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/home_bg</item>
+        <item name="android:statusBarColor">@color/bar_bg</item>
+        <item name="android:navigationBarColor">@color/bar_bg</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+
+    <style name="BarButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+</resources>

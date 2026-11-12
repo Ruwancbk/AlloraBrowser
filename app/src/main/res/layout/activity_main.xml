@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bar_bg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="6dp">
+
+        <EditText
+            android:id="@+id/urlBar"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/url_bg"
+            android:hint="Search or enter address"
+            android:imeOptions="actionGo"
+            android:importantForAutofill="no"
+            android:inputType="textUri"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#8890B5"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:max="100"
+        android:progress="0"
+        android:visibility="invisible" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <org.mozilla.geckoview.GeckoView
+            android:id="@+id/geckoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/homeView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/home_bg"
+            android:contentDescription="Allora Browser"
+            android:padding="24dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_full" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal">
+
+        <TextView android:id="@+id/btnBack" style="@style/BarButton" android:text="◀" />
+        <TextView android:id="@+id/btnForward" style="@style/BarButton" android:text="▶" />
+        <TextView android:id="@+id/btnReload" style="@style/BarButton" android:text="⟳" />
+        <TextView android:id="@+id/btnTabs" style="@style/BarButton" android:text="1" />
+        <TextView android:id="@+id/btnMenu" style="@style/BarButton" android:text="⋮" />
+    </LinearLayout>
+</LinearLayout>
