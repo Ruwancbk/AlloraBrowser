@@ -44,8 +44,7 @@ class MainActivity : AppCompatActivity() {
         private fun runtimeFor(activity: MainActivity): GeckoRuntime {
             sharedRuntime?.let { return it }
             val rt = GeckoRuntime.create(activity.applicationContext)
-            it.session.settings.setUserAgentMode(userAgentMode())
-it.session.settings.setViewportMode(viewportMode())
+            rt.settings.contentBlocking.setAntiTracking(ContentBlocking.AntiTracking.STRICT)
             sharedRuntime = rt
             return rt
         }
@@ -353,7 +352,7 @@ it.session.settings.setViewportMode(viewportMode())
         desktopMode = !desktopMode
         tabs.forEach {
             it.session.settings.setUserAgentMode(userAgentMode())
-it.session.settings.setViewportMode(viewportMode())
+            it.session.settings.setViewportMode(viewportMode())
         }
         current?.session?.reload(GeckoSession.LOAD_FLAGS_BYPASS_CACHE)
     }
