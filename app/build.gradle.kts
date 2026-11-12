@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.allora.browser"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.allora.browser"
